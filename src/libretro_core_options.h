@@ -55,6 +55,11 @@ struct retro_core_option_v2_category option_cats_us[] = {
       "Input",
       "Change controller settings."
    },
+   {
+      "display",
+      "Display",
+      "Change display settings."
+   },
    { NULL, NULL, NULL },
 };
 
@@ -72,6 +77,20 @@ struct retro_core_option_v2_definition option_defs_us[] = {
          { NULL, NULL },
       },
       "right"
+   },
+   {
+      "freeintv_multiscreen_overlay",
+      "Onscreen Interactive Keypad Overlays (Restart and Touchscreen/Mouse Required)",
+      NULL,
+      "Enable multi-screen mode with onscreen interactive keypad overlays (370x600 PNG files) and side-by-side game/keypad display. Changing this setting requires a core restart. Mouse or touchscreen input is required to interact with the keypad overlays.",
+      NULL,
+      "display",
+      {
+         { "disabled", "Disabled" },
+         { "enabled",  "Enabled"  },
+         { NULL, NULL },
+      },
+      "disabled"
    },
    { NULL, NULL, NULL, NULL, NULL, NULL, {{0}}, NULL },
 };

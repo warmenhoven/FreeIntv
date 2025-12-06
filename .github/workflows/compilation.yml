@@ -14,6 +14,9 @@ jobs:
     - name: Install dependencies
       run: |
         apk add build-base git zip
+
+    - name: Mark repo as safe
+      run: git config --global --add safe.directory $GITHUB_WORKSPACE
         
     - uses: actions/checkout@v2
     - run: |
@@ -29,7 +32,7 @@ jobs:
 
     - name: Upload artifacts
       if: ${{ success() }}
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: freeintv_libretro_ps2-${{ steps.slug.outputs.sha8 }}
         path: freeintv_libretro_ps2.a
